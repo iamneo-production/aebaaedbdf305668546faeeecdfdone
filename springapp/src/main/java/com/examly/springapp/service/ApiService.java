@@ -1,3 +1,5 @@
+package com.example.springapp.service;
+import com.example.springapp.model.Laptop;
 import java.util.*;
 public class ApiService {
     private List<Laptop> laptops;
