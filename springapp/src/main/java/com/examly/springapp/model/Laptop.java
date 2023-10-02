@@ -16,7 +16,16 @@ public class Laptop{
     public void setLaptopId(int laptopId){
         this.laptopId=laptopId;
     }
-    public String getLaptopBrand(String laptopBrand){
+    public void setLaptopBrand(String laptopBrand){
         this.laptopBrand=laptopBrand;
+    }
+    public String getLaptopBrand(){
+        return laptopBrand;
+    }
+    public int getLaptopPrice(){
+        return laptopPrice;
+    }
+    public void setLaptopPrice(int laptopPrice){
+        this.laptopPrice=laptopPrice;
     }
 }
