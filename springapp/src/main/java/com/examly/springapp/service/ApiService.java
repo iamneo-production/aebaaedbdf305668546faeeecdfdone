@@ -5,7 +5,15 @@ public class ApiService {
     private List<Laptop> laptops = new ArrayList<>();
 
     public boolean addLaptop(Laptop laptop) {
-        return laptops.add(laptop);
+        
+            // Add logic to validate and save the laptop data
+            if (laptop != null) {
+                // Assuming a successful addition, you can add the laptop to your data store
+                laptops.add(laptop);
+                return true; // Laptop added successfully
+            }
+            return false; // Laptop addition failed due to invalid input (e.g., null laptop object)
+        
     }
 
     public Laptop getLaptopById(int laptopId) {
