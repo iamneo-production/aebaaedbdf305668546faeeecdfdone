@@ -2,12 +2,10 @@ package com.example.springapp.service;
 import com.example.springapp.model.Laptop;
 import java.util.*;
 public class ApiService {
-    private List<Laptop> laptops;
-    public ApiService(){
-        laptops=new ArrayList<>();
-    }
-    public void addLaptop(Laptop laptop){
-        laptops.add(laptop);
+    private List<Laptop> laptops=new ArrayList<>();
+    
+    public boolean addLaptop(Laptop laptop){
+       return laptops.add(laptop);
     }
     public Laptop getLaptopById(int laptopId){
         for(Laptop laptop:laptops){
@@ -20,7 +18,12 @@ public class ApiService {
     public List<Laptop>getAllLaptops(){
         return laptops;
     }
-    public void removeLaptopById(int laptopId){
-        laptops.removeIf(laptop->laptop.getLaptopId()==laptopId);
+    public boolean removeLaptopById(int laptopId){
+        for(Laptop laptop:laptops){
+            if(laptop.getLaptopId()==laptopId){
+                return laptop.remove(laptop);
+            }
+        }
+        return false;
     }
 }
